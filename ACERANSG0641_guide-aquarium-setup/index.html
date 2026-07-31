@@ -1,0 +1,273 @@
+<!doctype html>
+<html onclick="bbscriptOnClick()">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACE66</title>
+    <link rel="icon" type="images/ico" href="images/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles/animation.css" />
+    <link href="./styles/Futura-Medium.otf" rel="stylesheet" />
+
+    <script type="text/javascript" src="assets/rolfix.js"></script>
+
+    <!-- Atlas lander tracking script — place at top of <head>. -->
+    <!-- Atlas lander tracking script — place at top of <head>. -->
+    <meta
+      http-equiv="delegate-ch"
+      content="sec-ch-ua https://trk.rusticcrumbcafe.com; sec-ch-ua-mobile https://trk.rusticcrumbcafe.com; sec-ch-ua-arch https://trk.rusticcrumbcafe.com; sec-ch-ua-model https://trk.rusticcrumbcafe.com; sec-ch-ua-platform https://trk.rusticcrumbcafe.com; sec-ch-ua-platform-version https://trk.rusticcrumbcafe.com; sec-ch-ua-bitness https://trk.rusticcrumbcafe.com; sec-ch-ua-full-version-list https://trk.rusticcrumbcafe.com; sec-ch-ua-full-version https://trk.rusticcrumbcafe.com"
+    />
+    <style>
+      .dtpcnt {
+        opacity: 0;
+      }
+    </style>
+    <script>
+      (function () {
+        try {
+          var u = new URL(location.href);
+          var cpid =
+            u.searchParams.get("cpid") ||
+            "de06d9ea-0f07-4215-a966-2806e6f3aa76";
+          var lpid =
+            u.searchParams.get("apid") ||
+            u.searchParams.get("lpid") ||
+            "0f343584-1c38-473b-88a9-f0bd2accc4be";
+          var lid = u.searchParams.get("lid") || "";
+          if (!cpid) {
+            return;
+          }
+          var s = document.createElement("script");
+          s.defer = 1;
+          s.src =
+            "https://trk.rusticcrumbcafe.com/d/.js?cpid=" +
+            encodeURIComponent(cpid) +
+            (lpid ? "&lpid=" + encodeURIComponent(lpid) : "") +
+            (lid ? "&lid=" + encodeURIComponent(lid) : "") +
+            "&lpurl=" +
+            encodeURIComponent(location.href) +
+            "&lpt=" +
+            encodeURIComponent(document.title || "") +
+            "&lpref=" +
+            encodeURIComponent(document.referrer || "") +
+            "&vtm=" +
+            Date.now();
+          document.head.appendChild(s);
+        } catch (e) {}
+      })();
+    </script>
+    <noscript
+      ><link
+        href="https://trk.rusticcrumbcafe.com/d/.js?noscript=true&lpurl="
+        rel="stylesheet"
+    /></noscript>
+
+    <style>
+      body {
+        background-color: #bdbdbd;
+        font-weight: 500;
+      }
+
+      .text-stroke {
+        -webkit-text-stroke: #7a0000;
+        -webkit-text-stroke-width: 1px;
+      }
+    </style>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .x-center {
+          @apply left-1/2 -translate-x-1/2;
+        }
+
+        .y-center {
+          @apply top-1/2 -translate-y-1/2;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bg-transparent flex flex-col items-center justify-center">
+      <div
+        class="animate__animated animation__glowing h-dvh flex items-center relative overflow-hidden"
+      >
+        <img
+          class="w-full h-screen mx-auto"
+          src="images/background.jpg"
+          alt="Background"
+        />
+
+        <div class="absolute top-[2%] w-[90%] x-center">
+          <img src="images/top-subject.png" alt="" />
+        </div>
+
+        <div class="absolute top-[48vw] md:top-[28%] w-[90%] x-center">
+          <div class="relative">
+            <img
+              class="relative z-[9]"
+              src="images/machine.png"
+              class="w-full"
+              alt="Machine"
+            />
+
+            <div
+              class="absolute bottom-[3%] flex flex-col right-[12%] w-[40%] z-[13]"
+            >
+              <button id="draw-cta" class="w-full zoom-in-out">
+                <img src="images/cta.png" alt="CTA" />
+              </button>
+
+              <div
+                class="font-bold text-center text-black uppercase text-[3vw] md:text-[0.8vw]"
+              >
+                Free draw chance: <span>1</span>
+              </div>
+            </div>
+
+            <div class="absolute bottom-[5.2%] left-[1%] w-[37.8%] z-[11]">
+              <img src="images/bottom-win-hole.png" alt="Win Hole" />
+            </div>
+
+            <div class="absolute top-0 w-full z-[11]">
+              <img src="images/machine-top.png" alt="Machine Top" />
+            </div>
+
+            <div class="absolute top-[20%] x-center w-[90%] z-[10]">
+              <div class="relative z-[9]">
+                <img src="images/screen.png" alt="Screen" />
+              </div>
+
+              <div class="absolute right-[30%] top-[-40%] w-[15%] z-[8]">
+                <img
+                  id="claw"
+                  class="relative z-[9]"
+                  src="images/claw.png"
+                  alt="Claw"
+                />
+
+                <div class="relative left-1/2 x-center w-[190%]">
+                  <img id="clawed-item" src="images/clawed-item.png" alt="" />
+                </div>
+              </div>
+
+              <div class="absolute bottom-0 x-center w-full z-[7]">
+                <img src="images/gatcha-2.png" alt="Gatcha" />
+              </div>
+            </div>
+
+            <div class="absolute w-full top-[4%] x-center z-[12] text-center">
+              <div
+                class="font-bold text-white text-[6vw] md:text-[1.5vw] uppercase"
+              >
+                Prize Pool
+              </div>
+
+              <div
+                class="w-full text-[2vw] max-md:text-[7vw] font-bold text-[#ffdd66] mt-[-3%] md:mt-[-4%]"
+              >
+                RM <span id="result">9898702.73</span>
+              </div>
+            </div>
+
+            <div
+              class="absolute w-full top-[100%] text-[#fbee10] text-[3.5vw] md:text-[1vw] font-bold text-center"
+            >
+              <p>
+                Grab the Chance! Draw time ending in<span
+                  style="padding: 10px"
+                  id="counter"
+                ></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="dialog"
+      class="fixed inset-0 z-50 flex items-start justify-center bg-black/70 hidden"
+    >
+      <div
+        onclick="event.stopPropagation()"
+        class="bg-transparent rounded-xl w-full max-md:w-screen max-md:p-4 opacity-0 animate-fadeIn"
+      >
+        <div class="relative">
+          <img
+            class="mt-[2%] mx-auto w-full md:w-[26%]"
+            src="images/dialog-win-bg.png"
+            alt=""
+            id="dialog-win-bg"
+          />
+
+          <div
+            class="absolute flex flex-col justify-center gap-4 max-md:gap-2 bottom-[-16%] md:bottom-[-14%] x-center w-full"
+          >
+            <a
+              id="click-url"
+              class="block mx-auto w-[60%] md:w-[14%] zoom-in-out"
+              href="https://trk.rusticcrumbcafe.com/click"
+            >
+              <img id="dialog-win-cta" src="images/dialog-win-cta.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bgm" preload="auto" src="media/bgm.mp3" loop>
+      <p>Your browser does not support the audio element</p>
+    </audio>
+    <audio id="claw-drop" preload="auto" src="media/claw-drop.mp3" loop>
+      <p>Your browser does not support the audio element</p>
+    </audio>
+    <audio id="win" preload="auto" src="media/win.mp3">
+      <p>Your browser does not support the audio element</p>
+    </audio>
+
+    <script src="js/page.js"></script>
+
+    <script>
+      let value = 989870273;
+      var count_up = 0;
+      var countdownElement = document.getElementById("result");
+
+      var countdownInterval = function () {
+        value++;
+        count_up++;
+        countdownElement.innerHTML = (value / 100)
+          .toFixed(2)
+          .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+      };
+
+      var intervalID = window.setInterval(countdownInterval, 10);
+
+      countdown(4);
+
+      function countdown(minutes) {
+        var seconds = 60;
+        var mins = minutes;
+
+        function tick() {
+          var counter = document.getElementById("counter");
+          var current_minutes = mins - 1;
+          seconds--;
+          counter.innerHTML =
+            current_minutes.toString() +
+            ":" +
+            (seconds < 10 ? "0" : "") +
+            String(seconds);
+          if (seconds > 0) {
+            setTimeout(tick, 1000);
+          } else {
+            if (mins > 1) {
+              countdown(mins - 1);
+            }
+          }
+        }
+        tick();
+      }
+    </script>
+  </body>
+</html>
