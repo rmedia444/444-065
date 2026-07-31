@@ -1,0 +1,428 @@
+<!doctype html>
+<html onclick="bbscriptOnClick()">
+  <head>
+    <title>ACE66</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="images/ico" href="./images/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./css/style.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <!-- Atlas lander tracking script — place at top of <head>. -->
+
+    <!-- Atlas lander tracking script — place at top of <head>. -->
+    <meta
+      http-equiv="delegate-ch"
+      content="sec-ch-ua https://trk.rusticcrumbcafe.com; sec-ch-ua-mobile https://trk.rusticcrumbcafe.com; sec-ch-ua-arch https://trk.rusticcrumbcafe.com; sec-ch-ua-model https://trk.rusticcrumbcafe.com; sec-ch-ua-platform https://trk.rusticcrumbcafe.com; sec-ch-ua-platform-version https://trk.rusticcrumbcafe.com; sec-ch-ua-bitness https://trk.rusticcrumbcafe.com; sec-ch-ua-full-version-list https://trk.rusticcrumbcafe.com; sec-ch-ua-full-version https://trk.rusticcrumbcafe.com"
+    />
+    <style>
+      .dtpcnt {
+        opacity: 0;
+      }
+    </style>
+    <script>
+      (function () {
+        try {
+          var u = new URL(location.href);
+          var cpid =
+            u.searchParams.get("cpid") ||
+            "9f38e078-8d98-4922-a915-37248f47498e";
+          var lpid =
+            u.searchParams.get("apid") ||
+            u.searchParams.get("lpid") ||
+            "4ed539cf-6513-447b-b635-646188cd7f08";
+          var lid = u.searchParams.get("lid") || "";
+          if (!cpid) {
+            return;
+          }
+          var s = document.createElement("script");
+          s.defer = 1;
+          s.src =
+            "https://trk.rusticcrumbcafe.com/d/.js?cpid=" +
+            encodeURIComponent(cpid) +
+            (lpid ? "&lpid=" + encodeURIComponent(lpid) : "") +
+            (lid ? "&lid=" + encodeURIComponent(lid) : "") +
+            "&lpurl=" +
+            encodeURIComponent(location.href) +
+            "&lpt=" +
+            encodeURIComponent(document.title || "") +
+            "&lpref=" +
+            encodeURIComponent(document.referrer || "") +
+            "&vtm=" +
+            Date.now();
+          document.head.appendChild(s);
+        } catch (e) {}
+      })();
+    </script>
+    <noscript
+      ><link
+        href="https://trk.rusticcrumbcafe.com/d/.js?noscript=true&lpurl="
+        rel="stylesheet"
+    /></noscript>
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .x-center {
+          @apply left-1/2 translate-x-[-50%];
+        }
+        .flex-center {
+          @apply absolute flex justify-center;
+        }
+      }
+    </style>
+    <style>
+      .zoom {
+        animation: zoomInOut 1s ease infinite;
+      }
+      .zoom2 {
+        animation: zoomInOut 1.4s ease infinite;
+      }
+      .zoom3 {
+        animation: zoomInOut 1.8s ease infinite;
+      }
+      .zoom4 {
+        animation: zoomInOut 2.5s ease infinite;
+      }
+      .spark {
+        animation: spark 1s infinite;
+      }
+      .carousel-control-prev {
+        left: -10vw !important;
+      }
+      .carousel-control-next {
+        right: -10vw !important;
+      }
+      @media (min-width: 768px) {
+        .carousel-control-next {
+          right: -4vw !important;
+        }
+        .carousel-control-prev {
+          left: -4vw !important;
+        }
+      }
+      @keyframes zoomInOut {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      @keyframes spark {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div class="relative flex flex-col items-center mx-auto w-full">
+      <div class="relative mx-auto overflow-hidden">
+        <div class="flex justify-center w-full">
+          <img class="h-screen md:h-[72vw] max-md:hidden" src="images/bg.png" />
+          <img class="md:hidden" src="images/bg-mobile.png" />
+        </div>
+        <div
+          class="absolute x-center flex justify-between items-center max-md:flex-col w-[92%] top-[1vw]"
+        >
+          <div class="w-full">
+            <img class="w-full" src="images/zues.png" />
+            <img
+              class="absolute w-[70%] md:w-[36%] top-[69vw] md:top-[34.5vw] left-[11vw] md:left-[5vw] spark"
+              src="images/sparkle.png"
+            />
+          </div>
+          <div class="w-full mx-auto">
+            <div class="relative w-full">
+              <img
+                class="relative w-full max-md:top-[10vw] z-10"
+                src=" images/frame.png"
+              />
+              <img
+                class="absolute x-center w-[65%] md:w-[61%] top-[-6vw] md:top-[-7vw]"
+                src="images/jackpot.png"
+              />
+              <p
+                class="absolute x-center font-semibold text-[#fdc865] top-[2vw] md:top-[-3.5vw] text-[6vw] md:text-[2.7vw]"
+              >
+                RM<span id="result">888888850</span>
+              </p>
+              <div
+                class="absolute flex justify-center w-[67%] top-[18vw] md:top-[4vw] x-center"
+              >
+                <img class="w-full spinner" src="images/wheel.png" />
+              </div>
+              <div
+                class="absolute w-1/2 top-[86vw] md:top-[38vw] x-center z-20"
+              >
+                <img
+                  class="w-full cursor-pointer zoom2"
+                  src="images/spin-now.png"
+                  onclick="startSpin()"
+                />
+                <p
+                  class="text-[2.5vw] md:text-[1vw] text-center text-red-600 font-bold italic"
+                >
+                  You have 2 chances
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute x-center flex justify-between items-center max-md:flex-col w-[92%] bottom-[2vw] md:bottom-[1vw] max-md:h-[62vw]"
+        >
+          <div class="w-[74%] md:w-[30%] ml-0 md:ml-[9vw]">
+            <p
+              class="text-white font-bold text-center mb-[1vw] text-[1rem] md:text-xl"
+            >
+              ACE66 Real Player Records
+            </p>
+            <div
+              id="carouselExampleSlidesOnly"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="images/record/1.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="images/record/2.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="images/record/3.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="images/record/4.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="images/record/5.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="images/record/6.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="w-[85%] md:w-[45%]">
+            <img class="w-full" src="images/footer.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio id="s1" src="audio/audio_1.mp3" loop></audio>
+    <audio id="s2" src="audio/audio_2.mp3" loop></audio>
+    <!-- Spin Again Modal -->
+    <div
+      class="modal fade"
+      id="spin_again_modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body flex justify-center">
+            <div class="flex-center relative mx-auto overflow-hidden">
+              <img class="w-full md:h-screen" src="./images/fail-pop.png" />
+              <div
+                class="absolute flex justify-center w-3/5 md:w-[62%] max-md:top-[106vw] md:bottom-[2vw] x-center"
+              >
+                <img
+                  class="cursor-pointer zoom"
+                  src="images/spin-again.png"
+                  onclick="startSpinWin()"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Winner Modal -->
+    <div
+      class="modal fade"
+      id="winner_modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body flex justify-center">
+            <div class="flex-center relative mx-auto overflow-hidden">
+              <img class="w-full md:h-screen" src="./images/win-pop.png" />
+              <div
+                class="flex-center w-full max-md:top-[136vw] md:bottom-[1vw] x-center"
+              >
+                <p class="text-white text-[0.6rem] md:text-[0.8rem] font-bold">
+                  This limited-time offer ends at
+                  <span style="color: red; padding: 1px" id="counter"></span>
+                </p>
+              </div>
+              <div
+                class="flex-center w-1/2 xl:w-[50%] max-md:top-[116vw] md:bottom-[3vw] x-center"
+              >
+                <a href="https://trk.rusticcrumbcafe.com/click" target="_blank">
+                  <img class="cursor-pointer zoom" src="images/cta.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        //$("#winner_modal").modal("show");
+      });
+
+      countdown(10);
+
+      var s1 = document.getElementById("s1");
+      var s2 = document.getElementById("s2");
+
+      function countdown(minutes) {
+        var seconds = 60;
+        var mins = minutes;
+
+        function tick() {
+          var counter = document.getElementById("counter");
+          var current_minutes = mins - 1;
+          seconds--;
+          counter.innerHTML =
+            current_minutes.toString() +
+            ":" +
+            (seconds < 10 ? "0" : "") +
+            String(seconds);
+          if (seconds > 0) {
+            setTimeout(tick, 1000);
+          } else {
+            if (mins > 1) {
+              countdown(mins - 1);
+            }
+          }
+        }
+        tick();
+      }
+
+      function startSpin() {
+        s1.play();
+
+        $(".spinner").addClass("spinfail");
+
+        setTimeout(function () {
+          s1.pause();
+          s1.currentTime = 0;
+          $("#spin_again_modal").modal("show");
+        }, 4400);
+      }
+
+      function startSpinWin() {
+        s1.play();
+        $(".spinner").removeClass("spinfail");
+
+        $("#spin_again_modal").modal("hide");
+
+        $(".spinner").addClass("spinWin");
+
+        setTimeout(function () {
+          s1.pause();
+
+          s2.play();
+          $("#winner_modal").modal("show");
+        }, 4400);
+      }
+
+      var value = 888888850;
+      var count_up = 0;
+      var countdownElement = document.getElementById("result");
+
+      var countdownInterval = function () {
+        value++;
+        count_up++;
+        countdownElement.innerHTML = (value / 100)
+          .toFixed(2)
+          .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+      };
+
+      var intervalID = window.setInterval(countdownInterval, 50);
+    </script>
+  </body>
+</html>
